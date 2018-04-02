@@ -6,8 +6,30 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="{ThemeResource SystemControlAcrylicWindowBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        
+        <TextBlock Name="TB001" FontSize="36" FontFamily="Open Sans" VerticalAlignment="Center" Text="  Naive Meida Player" />
+        <Button Content="Choose File" 
+                FontSize="24" 
+                HorizontalAlignment="Right"  
+                VerticalAlignment="Top" 
+                Margin="0,12,24,12" 
+                Click="Button_Click"/>
+        <MediaPlayerElement Grid.Row="1"
+                             x:Name="MPE" 
+                            MaxHeight="576"
+                            MaxWidth="1280"
+                            AreTransportControlsEnabled="True" 
+                            HorizontalAlignment="Stretch"/>
 
+        <TextBlock Grid.Row ="2" Text="By Pinkido" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="24" />
     </Grid>
 </Page>

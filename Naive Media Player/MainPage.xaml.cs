@@ -137,8 +137,7 @@ namespace Naive_Media_Player
                     /*await FileIO.WriteBufferAsync(musicCache, buffer);*/
                     ring.IsActive = false;
                     ring.Visibility = Visibility.Collapsed;
-                    onlineButton.IsEnabled = true;
-                    openButton.IsEnabled = true;
+
 
                     MPE.Source = MediaSource.CreateFromStorageFile(musicCache);
                     MPE.AreTransportControlsEnabled = true;
@@ -158,8 +157,10 @@ namespace Naive_Media_Player
                 await message_dialog.ShowAsync();
                 textbox002.Text = "";
             }
-            ring.IsActive = true;
-            ring.Visibility = Visibility.Visible;
+            ring.IsActive = false;
+            ring.Visibility = Visibility.Collapsed;
+            onlineButton.IsEnabled = true;
+            openButton.IsEnabled = true;
         }
 
         private async void DownloadandPlay(object sender, RoutedEventArgs e)
